@@ -16,11 +16,11 @@ int checkPrimos(int x){
             test=1;
     }
     if(test==0){
-        printf("%d%s\n", x," PRIMO");
+        //printf("%d%s\n", x," PRIMO");
         return 1;
     }
     else{
-        printf("%d%s\n", x," NO PRIMO");
+        //printf("%d%s\n", x," NO PRIMO");
         return 0;
     }
 }
