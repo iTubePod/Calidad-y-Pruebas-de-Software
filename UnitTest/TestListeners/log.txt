@@ -1,0 +1,7 @@
+	--------LOG--------
+
+	    --Algo salió mal-- 
+      Expected: 1
+To be equal to: -1
+	--------LOG--------
+
