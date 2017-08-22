@@ -3,5 +3,6 @@
 	    --Algo salió mal-- 
       Expected: 1
 To be equal to: -1
+Time taken: 0.000286
 	--------LOG--------
 

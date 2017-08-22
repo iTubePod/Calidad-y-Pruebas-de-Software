@@ -39,6 +39,10 @@ public:
 			myfile<<tpr.summary();
 			myfile<<"\n";
 		}
+		printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+		std::ostringstream buff;
+	    buff<<(double)(clock() - tStart)/CLOCKS_PER_SEC;
+		myfile<<"Time taken: " + buff.str() + "\n";
 		myfile<<"	--------LOG--------\n"<<std::endl;
 	}
 };
