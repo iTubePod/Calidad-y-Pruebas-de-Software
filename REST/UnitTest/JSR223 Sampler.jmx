@@ -112,6 +112,82 @@ finally{
 SampleResult.setResponseData(result.toString().getBytes());</stringProp>
         </JSR223Sampler>
         <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey"></stringProp>
+          <stringProp name="script">import com.mongodb.*;
+import java.io.*;
+import java.util.regex.Pattern;
+
+MongoClient cli = new MongoClient(&quot;localhost&quot;,27017);
+DB db = cli.getDB(&quot;test&quot;);
+DBCollection collection = db.getCollection(&quot;zips&quot;);
+char[] chars;
+int max = 0;
+int curr=0;
+StringBuilder result = new StringBuilder();
+
+Pattern regex = Pattern.compile(&quot;.*&quot;, Pattern.CASE_INSENSITIVE);
+BasicDBObject query = new BasicDBObject(&quot;city&quot;, regex);
+
+DBCursor cursor = collection.find(query);
+
+try{
+	max=Integer.parseInt(cursor.next());
+	while(cursor.hasNext()){
+		curr=Integer.parseInt(cursor.next());
+		if(curr&gt;max)
+			max=curr;
+	}
+	result.append(max);
+}
+finally{
+	cursor.close();
+}
+
+SampleResult.setResponseData(result.toString().getBytes());</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey"></stringProp>
+          <stringProp name="script">import com.mongodb.*;
+import java.io.*;
+import java.util.regex.Pattern;
+
+MongoClient cli = new MongoClient(&quot;localhost&quot;,27017);
+DB db = cli.getDB(&quot;test&quot;);
+DBCollection collection = db.getCollection(&quot;zips&quot;);
+char[] chars;
+int min = 0;
+int curr=0;
+StringBuilder result = new StringBuilder();
+
+Pattern regex = Pattern.compile(&quot;.*&quot;, Pattern.CASE_INSENSITIVE);
+BasicDBObject query = new BasicDBObject(&quot;city&quot;, regex);
+
+DBCursor cursor = collection.find(query);
+
+try{
+	min=Integer.parseInt(cursor.next());
+	while(cursor.hasNext()){
+		curr=Integer.parseInt(cursor.next());
+		if(curr&lt;max)
+			min=curr;
+	}
+	result.append(min);
+}
+finally{
+	cursor.close();
+}
+
+SampleResult.setResponseData(result.toString().getBytes());</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
