@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - "8181:8181"
+    environment:
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+
+  web:
+    build: ./upload
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - db

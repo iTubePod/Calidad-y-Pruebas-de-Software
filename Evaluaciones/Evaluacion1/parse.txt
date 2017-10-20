@@ -1,0 +1,9 @@
+COMMAND   PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+TeamViewe  51     root    8u  IPv4 0x259deebdf6d389a7      0t0  TCP localhost:5945 (LISTEN)
+Spotify   328 mgonco95   42u  IPv4 0x259deebdf6d3a48f      0t0  TCP localhost:4381 (LISTEN)
+Spotify   328 mgonco95   45u  IPv4 0x259deebdf6d3ad87      0t0  TCP localhost:4371 (LISTEN)
+Spotify   328 mgonco95   76u  IPv4 0x259deebdfcefe29f      0t0  TCP *:57621 (LISTEN)
+Spotify   328 mgonco95   92u  IPv4 0x259deebdfc8c90af      0t0  TCP *:56135 (LISTEN)
+SpotifyWe 382 mgonco95    5u  IPv4 0x259deebdf6d380af      0t0  TCP localhost:4370 (LISTEN)
+SpotifyWe 382 mgonco95    6u  IPv4 0x259deebdfcefd9a7      0t0  TCP localhost:4380 (LISTEN)
+nc        799 mgonco95    3u  IPv4 0x259deebe05ac7b97      0t0  TCP *:8000 (LISTEN)
